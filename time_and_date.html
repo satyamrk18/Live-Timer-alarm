@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <h1>i am handling a dated</h1>
+
+    <script>
+      const date = new Date();
+      {
+        console.log(date);
+        console.log(date.toLocaleString());
+        console.log(date.toDateString());
+        console.log(date.toTimeString());
+        console.log(date.toISOString());
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(
+          date.getHours(),
+          date.getMinutes(),
+          date.getSeconds(),
+          date.getMilliseconds()
+        );
+        const interval = setInterval(() => {
+          const time = new Date();
+          let hour = time.getHours().toString() % 12 || 12;
+          const minut = time.getMinutes().toString().padStart(2, "0");
+          const seconds = time.getSeconds().toString().padStart(2, "0");
+          const liveTime = `${hour}:${minut}:${seconds}`;
+          // const timeUP = "1:23:00";
+          // if (liveTime === timeUP) {
+          //   console.log("time up");
+          //   clearInterval(interval);
+          // }
+
+          console.log(liveTime);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
